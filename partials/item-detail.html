@@ -1,0 +1,33 @@
+<div class="dcontent">
+<div class="dtop">   
+<a href="#/items"><h1>Kauppapaikka</h1></a>
+  </div>
+    <table ng-repeat="item in items | filter: {id: iid }" >
+      <tr>
+        <td colspan="3">        
+        <h1>{{item.title}}</h1>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3"><img ng-src="{{item.imageUrl || 'img/Default.jpg'}}" height="500" width="500">
+        </td>
+      </tr>
+      <tr>
+        <td>Hinta: {{item.priceCents/100}}€</td>
+        <td>Puh: {{item.phone}}</td> 
+        <td>Email: {{item.email}}</td>
+      </tr>
+      <tr>
+        <td  colspan="3">
+        <br>
+        {{item.description}}
+        </td>
+      </tr>
+    </table>
+</div>
+
+
+
+
+
+

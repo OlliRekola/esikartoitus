@@ -1,0 +1,22 @@
+<a href="#/items"><h1 class="header">Kauppapaikka</h1></a>
+<div class="icontent">
+  <div class="itemform">
+    <h2>Lisää tuote</h2>
+      <label>Otsikko:</label> 
+      <input type="text" id="inputName" ng-model="item.title"/>  
+      <label>Hinta:</label> 
+      <input type="number" id="inputName" ng-model="item.priceCents"/> 
+      <br><br>  
+      <label>Email: &nbsp;&nbsp;</label> 
+      <input type="email" id="inputName" ng-model="item.email"/> 
+      <label>puh:&nbsp;&nbsp;</label>  
+      <input type="text" id="inputName" ng-model="item.phone"/>   
+      <br><br>
+      <label>Tuotekuvaus:</label>  
+      <textarea id="inputName" rows="4" cols="49"ng-model="item.description"></textarea>
+      <br><br>
+      <div class="nappi">
+        <button ng-click="createNewItem()">Lisää tuote</a>
+      </div>
+  </div>
+</div>

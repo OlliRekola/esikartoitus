@@ -1,0 +1,35 @@
+<h1 class="header">Kauppapaikka</h1>
+
+<div class="content">
+
+   <div class="top">   
+     <a href="#/additem" id="lisaa">Lisää tuote</a>
+      Hae: <input ng-model="query">
+      <br><br>
+      Hinta <input type="number" name="filterMin" ng-model="filterPriceMin"  /> 
+      - <input type="number" name="filterMax" ng-model="filterPriceMax"/> € 
+      
+      <br><br>
+      Järjestä:
+      <select ng-model="orderProp">
+        <option value="priceCents">Edullisin ensin</option>
+        <option value="-priceCents">Kallein ensin</option>
+        <option value="title">A-Z</option>
+        <option value="-title">Z-A</option>       
+      </select>
+      </div>
+    
+
+      <ul class="items">
+        <li ng-repeat="item in items| filter:query | filter:byRange('priceCents', filterPriceMin, filterPriceMax) | orderBy:orderProp" class="thumbnail">
+        <a href="#/items/{{item.id}}" class="thumb"><img ng-src="{{item.imageUrl || 'img/Default.jpg'}}"  alt=""></a>                    
+          <div class="title">
+          <a href="#/items/{{item.id}}">{{item.title}}</a>
+          <p>{{item.priceCents/100}}€</p>
+          </div>
+        </li>
+      </ul>
+      
+
+</div>
+
